@@ -1,0 +1,27 @@
+{
+  "name": "testablehttpserver",
+  "version": "0.1.0",
+  "description": "A simple HTTP server used to test multiple UI technologies",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.tdc.upmc.edu:schafferj5/TestableHTTPServer.git"
+  },
+  "author": "Jonathan Schaffer",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chalk": "^2.3.1",
+    "eslint": "^4.17.0",
+    "express": "^4.16.2",
+    "grunt": "^1.0.2",
+    "grunt-eslint": "^20.1.0",
+    "grunt-githooks": "^0.6.0",
+    "gruntify-eslint": "^4.0.0",
+    "jsdoc": "^3.5.5",
+    "jsonfile": "^4.0.0"
+  }
+}
