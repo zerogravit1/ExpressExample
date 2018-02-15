@@ -23,6 +23,7 @@
     "grunt-githooks": "^0.6.0",
     "gruntify-eslint": "^4.0.0",
     "jsdoc": "^3.5.5",
-    "jsonfile": "^4.0.0"
+    "jsonfile": "^4.0.0",
+    "material-components-web": "^0.30.0"
   }
 }
