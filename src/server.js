@@ -19,9 +19,17 @@ if ( cluster.isMaster ) {
   const express    = require( 'express' );
   const bodyParser = require( 'body-parser' );
   const jsonFile   = require( 'jsonfile' );
+  const path       = require( 'path' );
   const app        = express();
 
   const genericPayload = require( './payload.json' );
+
+  app.use( '/static', express.static( path.join( __dirname, 'public' ) ) );
+
+  app.get( '/', ( req, res ) => {
+    console.log( req.headers );
+    res.sendFile( __dirname + '/index.html' );
+  } );
 
   app.get( '/home/:id', ( req, res ) => {
     console.log( req.headers );
