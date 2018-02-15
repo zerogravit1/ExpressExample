@@ -25,8 +25,14 @@ if ( cluster.isMaster ) {
   const genericPayload = require( './payload.json' );
 
   app.use( '/static', express.static( path.join( __dirname, 'public' ) ) );
+  app.use( '/node', express.static( path.join( __dirname, '../node_modules/material-components-web/dist' ) ) );
 
   app.get( '/', ( req, res ) => {
+    console.log( req.headers );
+    res.redirect( '/html' );
+  } );
+
+  app.get( '/html', ( req, res ) => {
     console.log( req.headers );
     res.sendFile( __dirname + '/index.html' );
   } );
