@@ -1206,6 +1206,14 @@
         }
       }
     },
+    "grunt-contrib-eslint": {
+      "version": "0.0.5",
+      "resolved": "https://registry.npmjs.org/grunt-contrib-eslint/-/grunt-contrib-eslint-0.0.5.tgz",
+      "integrity": "sha1-byCW5DJitJ1erxOxUy38oArJybA=",
+      "requires": {
+        "eslint": "4.17.0"
+      }
+    },
     "grunt-eslint": {
       "version": "20.1.0",
       "resolved": "https://registry.npmjs.org/grunt-eslint/-/grunt-eslint-20.1.0.tgz",
