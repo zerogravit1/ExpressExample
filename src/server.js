@@ -1,6 +1,7 @@
 'use strict';
 
 const cluster = require( 'cluster' );
+let server;
 
 if ( cluster.isMaster ) {
   let cpuCount = require( 'os' ).cpus().length;
@@ -63,7 +64,7 @@ if ( cluster.isMaster ) {
     } );
   } );
 
-  app.listen( 3000, () => {
+  server = app.listen( 3000, () => {
     console.log(
       '************************************\n' +
       ' app server is running on port 3000\n\n' +
@@ -73,3 +74,5 @@ if ( cluster.isMaster ) {
     );
   } );
 }
+
+module.exports = server;
