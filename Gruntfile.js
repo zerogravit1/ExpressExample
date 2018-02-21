@@ -6,7 +6,7 @@ module.exports = function( grunt ) {
       options: {
         config: '.eslintrc'
       },
-      src: ['./src/**/*.js']
+      src: ['./src/**/*.js', './tests/**/*.spec.js']
     },
 
     githooks: {

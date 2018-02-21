@@ -1,7 +1,13 @@
 'use strict';
 
-const cluster = require( 'cluster' );
+// const cluster = require( 'cluster' );
+const express = require( 'express' );
+const jsonFile = require( 'jsonfile' );
+const path = require( 'path' );
+let app = express();
 
+const genericPayload = require( './payload.json' );
+/*
 if ( cluster.isMaster ) {
   let cpuCount = require( 'os' ).cpus().length;
 
@@ -15,17 +21,10 @@ if ( cluster.isMaster ) {
     console.log( 'Worker %d died', worker.id );
     cluster.fork();
   } );
-} else {
-  const express    = require( 'express' );
-  const bodyParser = require( 'body-parser' );
-  const jsonFile   = require( 'jsonfile' );
-  const path       = require( 'path' );
-  const app        = express();
-
-  const genericPayload = require( './payload.json' );
-
+} else {*/
   app.use( '/static', express.static( path.join( __dirname, 'public' ) ) );
   app.use( '/node', express.static( path.join( __dirname, '../node_modules/material-components-web/dist' ) ) );
+  app.use( express.json( [ 'strict' ] ) );
 
   app.get( '/', ( req, res ) => {
     console.log( req.headers );
@@ -47,29 +46,30 @@ if ( cluster.isMaster ) {
     }
   } );
 
-  app.use( bodyParser() );
+  //app.use( bodyParser() );
 
   app.post( '/home', ( req, res ) => {
-    let file = 'src/tmp_' + cluster.worker.id + '.json';
+    let file = 'src/tmp_' /*+ cluster.worker.id*/ + '.json';
     let obj  = req.body;
 
-    jsonFile.writeFile( file, obj, {spaces: 2 }, ( err ) => {
-      if ( err ) {
-        console.log( err );
-        res.status( 400 ).send( err );
-      } else {
-        res.status( 202 ).send( 'POST data accepted\nNode: ' + cluster.worker.id );
-      }
-    } );
+    if ( Object.keys( obj ).length !== 0 ) {
+      jsonFile.writeFile( file, obj, {spaces: 2 }, () => {
+        res.status( 202 ).send( 'POST data accepted\nNode: ' /*+ cluster.worker.id*/ );
+      } );
+    } else {
+      res.status( 400 ).send( 'bad request' );
+    }
   } );
 
-  app.listen( 3000, () => {
+  app.listen( 3000, '127.0.0.1', () => {
     console.log(
       '************************************\n' +
       ' app server is running on port 3000\n\n' +
-      ' cluster_id: ' + cluster.worker.id + '\n\n' +
+      ' cluster_id: ' /*+ cluster.worker.id*/ + '\n\n' +
       ' End Point:\n /home/:id\n /home\n\n METHODS:\n GET\n POST\n\n' +
       '************************************\n'
     );
   } );
-}
+//}
+
+module.exports = app;
