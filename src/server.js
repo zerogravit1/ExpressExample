@@ -36,6 +36,11 @@ if ( cluster.isMaster ) {
     res.sendFile( __dirname + '/index.html' );
   } );
 
+  app.get( '/page2', ( req, res ) => {
+    console.log( req.headers );
+    res.sendFile( __dirname + '/page2.html' );
+  } );
+
   app.get( '/home/:id', ( req, res ) => {
     console.log( req.headers );
 

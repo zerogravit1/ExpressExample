@@ -13,7 +13,15 @@
     </style>
   </head>
   <body class="mdc-typography">
-    <main>
+    <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall" data-mdc-auto-init="MDCToolbar">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <a href="./page2" class="material-icons mdc-toolbar__menu-icon">Go to Page 2</a>
+          <span class="mdc-toolbar__title">Main Page</span>
+        </section>
+      </div>
+    </header>
+    <main class="mdc-toolbar-fixed-adjust">
       <h1 class="mdc-typography--display1">Fill this out</h1>
       <form action="/home" method="POST" id="greeting-form">
         <div>
