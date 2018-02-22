@@ -38,6 +38,21 @@ describe( 'Testable HTTP Server', () => {
     } );
   } );
 
+  describe( '/GET Page 2', () => {
+    it( 'should return a 200', ( done ) => {
+      chai.request( server )
+        .get( '/page2' )
+        .end( ( err, res ) => {
+          if ( err ) {
+            throw err;
+          } else {
+            res.should.have.status( 200 );
+          }
+          done();
+        } );
+    } );
+  } );
+
   describe( '/GET home/:id', () => {
     it( 'should return 200', ( done ) => {
       chai.request( server )
