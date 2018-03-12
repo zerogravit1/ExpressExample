@@ -28,15 +28,15 @@ if ( cluster.isMaster ) {
 
   app.get( '/', ( req, res ) => {
     console.log( req.headers );
-    res.redirect( '/html' );
+    res.redirect( '/html/page1' );
   } );
 
-  app.get( '/html', ( req, res ) => {
+  app.get( '/html/page1', ( req, res ) => {
     console.log( req.headers );
     res.sendFile( __dirname + '/index.html' );
   } );
 
-  app.get( '/page2', ( req, res ) => {
+  app.get( '/html/page2', ( req, res ) => {
     console.log( req.headers );
     res.sendFile( __dirname + '/page2.html' );
   } );
