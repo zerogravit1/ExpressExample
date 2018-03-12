@@ -9,7 +9,7 @@ document.getElementById( 'greeting-form' ).addEventListener( 'submit', ( e ) => 
 
   const xhr = new XMLHttpRequest();
   xhr.open( 'POST', '/home', true );
-  xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+  xhr.setRequestHeader( 'Content-Type', 'application/json' );
 
   if ( firstname || lastname ) {
     greeting += ', ';
@@ -29,6 +29,6 @@ document.getElementById( 'greeting-form' ).addEventListener( 'submit', ( e ) => 
     }
   }
 
-  let data = 'firstname=' + firstname + '&lastname=' + lastname;
-  xhr.send( data );
+  let data = { firstname, lastname };
+  xhr.send( JSON.stringify( data ) );
 } );

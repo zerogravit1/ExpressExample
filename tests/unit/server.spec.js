@@ -26,7 +26,7 @@ describe( 'Testable HTTP Server', () => {
   describe( '/GET HTML', () => {
     it( 'should return a 200', ( done ) => {
       chai.request( server )
-        .get( '/html' )
+        .get( '/html/page1' )
         .end( ( err, res ) => {
           if ( err ) {
             throw err;
@@ -41,7 +41,7 @@ describe( 'Testable HTTP Server', () => {
   describe( '/GET Page 2', () => {
     it( 'should return a 200', ( done ) => {
       chai.request( server )
-        .get( '/page2' )
+        .get( '/html/page2' )
         .end( ( err, res ) => {
           if ( err ) {
             throw err;
