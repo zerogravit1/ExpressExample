@@ -19,6 +19,8 @@ exports.config = {
     showColors:             true
   },
 
+  SELENIUM_PROMISE_MANAGER: 0,
+
   beforeLaunch: '../libraries/routines/beforeLaunch.js',
 
   onPrepare: '../libraries/routines/onPrepare.js',
