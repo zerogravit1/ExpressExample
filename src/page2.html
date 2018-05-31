@@ -5,7 +5,7 @@
     <meta charset="utf-9">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet"
-          href="../node/material-components-web.css">
+          href="../node/material-components-web.min.css">
     <style>
       :root {
         --mdc-theme-primary: #5689a4;
@@ -21,7 +21,12 @@
         </section>
       </div>
     </header>
-    <script src="../node/material-components-web.js"></script>
+    <main id=page-two class="mdc-toolbar-fixed-adjust mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell">This is page 2.</div>
+      </div>
+    </main>
+    <script src="../node/material-components-web.min.js"></script>
     <script>mdc.autoInit()</script>
   </body>
 </html>
