@@ -1,10 +1,12 @@
-{
-  "env": {
+{ "env": {
     "browser": true,
     "es6": true,
     "jasmine": true,
     "node": true,
     "mocha": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8
   },
   "globals": {
     "browser": false,

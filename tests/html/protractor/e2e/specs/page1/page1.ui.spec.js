@@ -2,12 +2,12 @@
 
 const pOneClass = objRef().page1Class;
 
-beforeEach( async () => {
+beforeEach( async() => {
   await browser.get( process.env.BASE_URL + '/html/page1' );
 } );
 
 describe( 'Page 1 UI Elements', () => {
-  it( 'displays the toolbar', async () => {
+  it( 'displays the toolbar', async() => {
     expect( await pOneClass.toolbar.isDisplayed() ).toBe( true );
 
     expect( await pOneClass.navToPage2.isDisplayed() ).toBe( true );
@@ -17,7 +17,7 @@ describe( 'Page 1 UI Elements', () => {
     expect( await pOneClass.toolbarTitle.getText() ).toEqual( 'Main Page' );
   } );
 
-  it( 'displays the input form', async () => {
+  it( 'displays the input form', async() => {
     expect( await pOneClass.pageHeader.isDisplayed() ).toBe( true );
     expect( await pOneClass.pageHeader.getText() ).toEqual( 'Fill this out' );
 
@@ -35,7 +35,7 @@ describe( 'Page 1 UI Elements', () => {
     expect( await pOneClass.btnPrintGreeting.getText() ).toEqual( 'PRINT GREETING' );
   } );
 
-  it( 'displays the "Pick Food" dropdown', async () => {
+  it( 'displays the "Pick Food" dropdown', async() => {
     console.log( pOneClass.exampleMethod() );
     expect( await pOneClass.ddPickFood.isDisplayed() ).toBe( true );
 
