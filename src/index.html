@@ -5,7 +5,7 @@
     <meta charset="utf-9">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet"
-          href="../node/material-components-web.css">
+          href="../node/material-components-web.min.css">
     <style>
       :root {
         --mdc-theme-primary: #5689a4;
@@ -21,7 +21,7 @@
         </section>
       </div>
     </header>
-    <main class="mdc-toolbar-fixed-adjust">
+    <main id="page-one" class="mdc-toolbar-fixed-adjust">
       <h1 class="mdc-typography--display1">Fill this out</h1>
       <form action="/home" method="POST" id="greeting-form">
         <div>
@@ -80,7 +80,7 @@
     </main>
 
     <script src="../static/js/sendData.js"></script>
-    <script src="../node/material-components-web.js"></script>
+    <script src="../node/material-components-web.min.js"></script>
     <script>mdc.autoInit()</script>
   </body>
 </html>
