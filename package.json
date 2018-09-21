@@ -1,6 +1,6 @@
 {
   "name": "testablehttpserver",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple HTTP server used to test multiple UI technologies",
   "main": "server.js",
   "scripts": {
