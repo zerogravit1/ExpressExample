@@ -11,7 +11,6 @@ describe( 'Page 1 UI Elements', () => {
     expect( await pOneClass.toolbar.isDisplayed() ).toBe( true );
 
     expect( await pOneClass.navToPage2.isDisplayed() ).toBe( true );
-    expect( await pOneClass.navToPage2.getText() ).toEqual( 'Go to Page 2' );
 
     expect( await pOneClass.toolbarTitle.isDisplayed() ).toBe( true );
     expect( await pOneClass.toolbarTitle.getText() ).toEqual( 'Main Page' );
@@ -35,11 +34,10 @@ describe( 'Page 1 UI Elements', () => {
     expect( await pOneClass.btnPrintGreeting.getText() ).toEqual( 'PRINT GREETING' );
   } );
 
-  it( 'displays the "Pick Food" dropdown', async() => {
-    console.log( pOneClass.exampleMethod() );
+  it( 'displays the "Pick a Fruit" dropdown', async() => {
     expect( await pOneClass.ddPickFood.isDisplayed() ).toBe( true );
 
     expect( await pOneClass.ddPickFoodLabel.isDisplayed() ).toBe( true );
-    expect( await pOneClass.ddPickFoodLabel.getText() ).toEqual( 'Pick Food' );
+    expect( await pOneClass.ddPickFoodLabel.getText() ).toEqual( 'Pick a Fruit' );
   } );
 } );

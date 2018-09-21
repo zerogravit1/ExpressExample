@@ -7,9 +7,9 @@ class PageOne extends ToolBar {
     super();
     this.btnPrintGreeting   = $( 'button[type="submit"]' );
     this.ddPickFood         = $( '.mdc-select' );
-    this.ddPickFoodItem     = $$( '.mdc-list-item' );
-    this.ddPickFoodLabel    = $( '.mdc-select__label' );
-    this.ddPickFoodOptions  = $( '.mdc-menu.mdc-select__menu' );
+    this.ddPickFoodItem     = $( '.mdc-select__native-control' ).$$( 'option' );
+    this.ddPickFoodLabel    = $( '.mdc-select.demo-select' ).$( '.mdc-floating-label' );
+    this.ddPickFoodOptions  = $( '.mdc-select__native-control' );
     this.ddPickFoodSelected = $( '.mdc-select__selected-text' );
     this.greeting           = $( '#greeting' );
     this.pageHeader         = $( '.mdc-typography--display1' );

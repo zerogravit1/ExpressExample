@@ -1,10 +1,10 @@
 'use strict';
 
-document.getElementById( 'greeting-form' ).addEventListener( 'submit', ( e ) => {
+document.getElementById( 'greeting-button' ).addEventListener( 'click', ( e ) => {
   e.preventDefault();
 
-  let firstname = e.target.elements.firstname.value;
-  let lastname  = e.target.elements.lastname.value;
+  let firstname = document.getElementById( 'firstname' ).value;
+  let lastname  = document.getElementById( 'lastname' ).value;
   let greeting  = 'Hello';
 
   const xhr = new XMLHttpRequest();

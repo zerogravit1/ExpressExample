@@ -2,9 +2,9 @@
 
 class ToolBar {
   constructor() {
-    this.navToPage2   = $( '.mdc-toolbar__menu-icon' );
-    this.toolbar      = $( '.mdc-toolbar' );
-    this.toolbarTitle = $( '.mdc-toolbar__title' );
+    this.navToPage2   = $( '.mdc-top-app-bar__navigation-icon' );
+    this.toolbar      = $( '.mdc-top-app-bar' );
+    this.toolbarTitle = $( '.mdc-top-app-bar__title' );
   }
 }
 
