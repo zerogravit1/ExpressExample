@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Material Components for the web</title>
+    <meta charset="utf-9">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet"
+          href="../node/material-components-web.min.css">
+    <style>
+      :root {
+        --mdc-theme-primary: #5689a4;
+      }
+    </style>
+  </head>
+  <body class="mdc-typography">
+    <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall" data-mdc-auto-init="MDCToolbar">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <a href="./page1" class="material-icons mdc-toolbar__menu-icon">Go to Page 1</a>
+          <span class="mdc-toolbar__title">Page 2</span>
+        </section>
+      </div>
+    </header>
+    <main id=page-two class="mdc-toolbar-fixed-adjust mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell">This is page 2.</div>
+      </div>
+    </main>
+    <script src="../node/material-components-web.min.js"></script>
+    <script>mdc.autoInit()</script>
+  </body>
+</html>
