@@ -4,83 +4,75 @@
     <title>Material Components for the web</title>
     <meta charset="utf-9">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet"
-          href="../node/material-components-web.min.css">
+    <link rel="stylesheet" href="../node/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../static/css/site.css">
     <style>
       :root {
         --mdc-theme-primary: #5689a4;
       }
     </style>
   </head>
-  <body class="mdc-typography">
-    <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall" data-mdc-auto-init="MDCToolbar">
-      <div class="mdc-toolbar__row">
-        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-          <a href="./page2" class="material-icons mdc-toolbar__menu-icon">Go to Page 2</a>
-          <span class="mdc-toolbar__title">Main Page</span>
+  <body>
+    <header class="mdc-top-app-bar" data-mdc-auto-init="MDCTopAppBar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <span class="mdc-top-app-bar__title">Main Page</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+          <a href="./page2" class="material-icons mdc-top-app-bar__navigation-icon">navigate_next</a>
         </section>
       </div>
     </header>
-    <main id="page-one" class="mdc-toolbar-fixed-adjust">
-      <h1 class="mdc-typography--display1">Fill this out</h1>
-      <form action="/home" method="POST" id="greeting-form">
-        <div>
-          <div class="mdc-form-field">
-            <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
-              <input name="firstName" id="firstname" type="text" class="mdc-text-field__input">
-              <label for="firstname" class="mdc-text-field__label">
-                First Name
-              </label>
-              <div class="mdc-line-ripple"></div>
-            </div>
-          </div>
-          <div class="mdc-form-field">
-            <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
-              <input name="lastName" id="lastname" type="text" class="mdc-text-field__input">
-              <label for="lastname" class="mdc-text-field__label">
-                Last Name
-              </label>
-              <div class="mdc-line-ripple"></div>
-            </div>
-          </div>
+    <main id="page-one">
+      <div class="main-container">
+        <h1 class="header mdc-typography--display1">Fill this out</h1>
+        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+          <input type="text" id="firstname" class="mdc-text-field__input">
+          <label class="mdc-floating-label" for="firstname">First Name</label>
+          <div class="mdc-line-ripple"></div>
+        </div>
+        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+          <input type="text" id="lastname" class="mdc-text-field__input">
+          <label class="mdc-floating-label" for="lastname">Last Name</label>
+          <div class="mdc-line-ripple"></div>
         </div>
 
-        <button type="submit"
+        <button type="submit" id="greeting-button"
                 class="mdc-button
-                       mdc-button--raised
-                       mdc-ripple-surface"
+                        mdc-button--raised
+                        mdc-ripple-surface"
                 data-mdc-auto-init="MDCRipple">
           Print Greeting
         </button>
-      </form>
-      <p class="mdc-typography--headline" id="greeting"></p>
-      <div class="mdc-select" data-mdc-auto-init="MDCSelect" role="listbox">
-        <div class="mdc-select__surface mdc-ripple-upgraded" tabindex="0">
-          <div class="mdc-select__label">Pick Food</div>
-          <div class="mdc-select__selected-text"></div>
-          <div class="mdc-select__bottom-line"></div>
+        <p class="mdc-typography--headline" id="greeting"></p>
+        <div class="mdc-select demo-select" data-mdc-auto-init="MDCSelect">
+          <select class="mdc-select__native-control">
+            <option value="" disabled selected></option>
+            <option value="apple">apple</option>
+            <option value="orange">orange</option>
+            <option value="banana">banana</option>
+          </select>
+          <label class="mdc-floating-label mdc-floating-label--above">Pick a Fruit</label>
+          <div class="mdc-line-ripple"></div>
         </div>
-        <div class="mdc-menu mdc-select__menu">
-          <ul class="mdc-list mdc-menu__items">
-            <li class="mdc-list-item" role="option" tabindex="0">
-              Pizza 0
-            </li>
-            <li class="mdc-list-item" role="option" tabindex="0">
-              Pizza 1
-            </li>
-            <li class="mdc-list-item" role="option" tabindex="0">
-              Pizza 2
-            </li>
-            <li class="mdc-list-item" role="option" tabindex="0">
-              Pizza 3
-            </li>
-          </ul>
+        <div class="mdc-form-field" data-mdc-auto-init="MDCFormField">
+          <div class="mdc-checkbox" data-mdc-auto-init="MDCCheckbox">
+            <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+            <div class="mdc-checkbox__background">
+              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.58"/>
+              </svg>
+              <div class="mdc-checkbox__mixedmark"></div>
+            </div>
+          </div>
+          <label for="checkbox-1">apple</label>
         </div>
       </div>
     </main>
 
     <script src="../static/js/sendData.js"></script>
     <script src="../node/material-components-web.min.js"></script>
-    <script>mdc.autoInit()</script>
+    <script type="text/javascript">window.mdc.autoInit()</script>
   </body>
 </html>
